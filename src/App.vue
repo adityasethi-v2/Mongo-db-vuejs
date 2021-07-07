@@ -1,9 +1,24 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
+      <div class="container">
+        <ul class="nav navbar-nav flex-row float-right">
+          <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/">Create Student</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/view">View Students</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Router view -->
+    <div class="container mt-5">
+      <router-view></router-view>
+    </div>
   </div>
-  <router-view/>
 </template>
 
 <style lang="scss">
@@ -26,5 +41,13 @@
       color: #42b983;
     }
   }
+}
+
+.router-link-exact-active {
+  color: #ffffff !important;
+}
+
+li.nav-item {
+  padding: 0 20px;
 }
 </style>
